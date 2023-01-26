@@ -2,6 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
 const https = require("https");
+require("dotenv").config();
+const{
+  MAILCHIMP_API_KEY
+}=process.env
 
 const app = express();
 
@@ -39,7 +43,7 @@ const url = "https://us14.api.mailchimp.com/3.0/lists/6276d07075";
 
 const options = {
   method: "POST",
-  auth: "thompson:d6d50d2ca818331d37924d6a71b7fc14-us14"
+  auth: "thompson:"+MAILCHIMP_API_KEY
 }
 
 const request = https.request(url, options, function(response){
