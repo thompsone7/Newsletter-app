@@ -5,7 +5,7 @@ const https = require("https");
 require("dotenv").config();
 const{
   MAILCHIMP_API_KEY
-} = process.env
+}=process.env
 
 const app = express();
 
