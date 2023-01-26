@@ -7,6 +7,10 @@ const{
   MAILCHIMP_API_KEY
 }=process.env
 
+const{
+  LIST_ID
+}=process.env
+
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -39,7 +43,7 @@ app.post("/", function(req, res){
 
 const jsonData = JSON.stringify(data);
 
-const url = "https://us14.api.mailchimp.com/3.0/lists/6276d07075";
+const url = "https://us14.api.mailchimp.com/3.0/lists/"+LIST_ID;
 
 const options = {
   method: "POST",
